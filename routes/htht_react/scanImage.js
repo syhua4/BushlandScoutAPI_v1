@@ -26,8 +26,9 @@ router.use("/", function (req, res, next) {
     );
     let scanResult = "";
     child.stdout.on("data", function (output) {
-      scanResult = output.toString();
-    });
+          scanResult = output.toString();
+
+	});
     child.on("exit", function () {
       let response = {
         status: 200,
